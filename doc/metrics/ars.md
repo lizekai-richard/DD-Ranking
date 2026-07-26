@@ -37,7 +37,7 @@ dd_ranking.metrics.AugmentationRobustScore(config: Optional[Config] = None,
     device: str="cuda",
     dist: bool=False
 )
-[**[SOURCE]**](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/metrics/aug_robust.py)
+[**[SOURCE]**](ddranking/metrics/aug_robust.py)
 </div>
 
 A class for evaluating the performance of a dataset distillation method with soft labels. User is able to modify the attributes as needed.

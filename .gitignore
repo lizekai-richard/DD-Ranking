@@ -8,3 +8,8 @@ PKG-INFO
 build/
 *.pyc
 *.txt
+# anonymity / secrets
+.pypirc
+dist/
+*.egg-info/
+.__wtest

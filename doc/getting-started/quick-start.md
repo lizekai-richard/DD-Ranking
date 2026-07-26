@@ -3,7 +3,7 @@
 Below is a step-by-step guide on how to use our `dd_ranking`. This demo is for label-robust score (LRS) on soft labels (source code can be found in `demo_lrs_soft.py`). You can find the demo for LRS on hard label demo in `demo_lrs_hard.py` and the demo for augmentation-robust score (ARS) in `demo_ars.py`.
 DD-Ranking supports multi-GPU Distributed evaluation. You can simply use `torchrun` to launch the evaluation.
 
-**Step1**: Intialize a soft-label metric evaluator object. Config files are recommended for users to specify hyper-parameters. Sample config files are provided [here](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/tree/main/configs).
+**Step1**: Intialize a soft-label metric evaluator object. Config files are recommended for users to specify hyper-parameters. Sample config files are provided [here](./tree/main/configs).
 
 ```python
 from ddranking.metrics import LabelRobustScoreSoft

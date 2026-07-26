@@ -16,7 +16,7 @@ Our implementation of DSA is adopted from [DSA](https://github.com/VICO-UoE/Data
 
 <span style="color:#FF6B00;">CLASS</span> 
 ddranking.aug.DSA(params: dict, seed: int, aug_mode: str)
-[**[SOURCE]**](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/aug/dsa.py)
+[**[SOURCE]**](ddranking/aug/dsa.py)
 
 </div>
 

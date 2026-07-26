@@ -6,7 +6,7 @@ Cutmix is a data augmentation technique that creates new samples by combining pa
 
 <span style="color:#FF6B00;">CLASS</span> 
 ddranking.aug.Cutmix(params: dict)
-[**[SOURCE]**](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/aug/cutmix.py)
+[**[SOURCE]**](ddranking/aug/cutmix.py)
 
 </div>
 

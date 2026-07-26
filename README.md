@@ -120,7 +120,7 @@ Install DD-Ranking with `pip` or from source:
 From pip
 
 ```bash
-pip install ddranking
+pip install -e .
 ```
 
 From source

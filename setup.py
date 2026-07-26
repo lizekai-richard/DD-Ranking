@@ -9,7 +9,7 @@ setup(
     long_description=open('README.md').read(),  # Use your README as the long description
     long_description_content_type='text/markdown',
     author='DD-Ranking Team',
-    author_email='lizekai@u.nus.edu',
+    author_email='anonymous@anonymous.invalid',
     include_dirs=['ddranking', 'configs', 'static'],
     include_package_data=True,
     packages=packages,  # Automatically discover submodules

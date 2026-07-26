@@ -39,7 +39,7 @@ dd_ranking.metrics.LabelRobustScoreSoft(config: Optional[Config] = None,
     device: str="cuda",
     dist: bool=False
 )
-[**[SOURCE]**](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/metrics/soft_label.py)
+[**[SOURCE]**](ddranking/metrics/soft_label.py)
 </div>
 
 A class for evaluating the performance of a dataset distillation method with soft labels. User is able to modify the attributes as needed.

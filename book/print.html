@@ -159,9 +159,7 @@
 <img src="static/logo.png" alt="logo"/>
 </span>
 <span style="display: block; text-align: center;">
-<p><a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking"><img src="https://img.shields.io/github/stars/NUS-HPC-AI-Lab/DD-Ranking?style=flat&amp;logo=github" alt="GitHub stars" /></a>
-<a href="https://huggingface.co/spaces/logits/DD-Ranking"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-yellow?style=flat" alt="Hugging Face" /></a>
-<a href="https://x.com/Richard91316073/status/1890296645486801230"><img src="https://img.shields.io/badge/Twitter-Follow-blue?style=flat&amp;logo=twitter" alt="Twitter" /></a></p>
+<p>
 </span>
 <p>Welcome to <strong>DD-Ranking</strong> (DD, <em>i.e.</em>, Dataset Distillation), an integrated and easy-to-use evaluation benchmark for dataset distillation! It aims to provide a fair evaluation scheme for DD methods that can decouple the impacts from knowledge distillation and data augmentation to reflect the real informativeness of the distilled data.</p>
 <h2 id="motivation"><a class="header" href="#motivation">Motivation</a></h2>
@@ -248,7 +246,7 @@ and normalized similarly.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h2>
 <p>Below is a step-by-step guide on how to use our <code>dd_ranking</code>. This demo is for label-robust score (LRS) on soft labels (source code can be found in <code>demo_lrs_soft.py</code>). You can find the demo for LRS on hard label demo in <code>demo_lrs_hard.py</code> and the demo for augmentation-robust score (ARS) in <code>demo_ars.py</code>.
 DD-Ranking supports multi-GPU Distributed evaluation. You can simply use <code>torchrun</code> to launch the evaluation.</p>
-<p><strong>Step1</strong>: Intialize a soft-label metric evaluator object. Config files are recommended for users to specify hyper-parameters. Sample config files are provided <a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/tree/main/configs">here</a>.</p>
+<p><strong>Step1</strong>: Intialize a soft-label metric evaluator object. Config files are recommended for users to specify hyper-parameters. Sample config files are provided <a href="./tree/main/configs">here</a>.</p>
 <pre><code class="language-python">from ddranking.metrics import LabelRobustScoreSoft
 from ddranking.config import Config
 
@@ -370,7 +368,7 @@ custom_val_trans: Optional[Callable] = None,
 device: str = "cuda",
 dist: bool = False
 )
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/metrics/hard_label.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/metrics/hard_label.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <p>A class for evaluating the performance of a dataset distillation method with hard labels. User is able to modify the attributes as needed.</p>
 <h3 id="parameters"><a class="header" href="#parameters">Parameters</a></h3>
@@ -528,7 +526,7 @@ custom_val_trans: Optional[Callable]=None,
 device: str="cuda",
 dist: bool=False
 )
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/metrics/soft_label.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/metrics/soft_label.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <p>A class for evaluating the performance of a dataset distillation method with soft labels. User is able to modify the attributes as needed.</p>
 <h3 id="parameters-2"><a class="header" href="#parameters-2">Parameters</a></h3>
@@ -692,7 +690,7 @@ custom_val_trans: Optional[Callable]=None,
 device: str="cuda",
 dist: bool=False
 )
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/metrics/aug_robust.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/metrics/aug_robust.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <p>A class for evaluating the performance of a dataset distillation method with soft labels. User is able to modify the attributes as needed.</p>
 <h3 id="parameters-4"><a class="header" href="#parameters-4">Parameters</a></h3>
@@ -849,7 +847,7 @@ custom_train_trans: Optional[Callable]=None,
 custom_val_trans: Optional[Callable]=None,
 device: str="cuda"
 )
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/metrics/general.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/metrics/general.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <p>A class for evaluating the traditional test accuracy of a surrogate model on the synthetic dataset under various settings (label type, data augmentation, etc.).</p>
 <h3 id="parameters-6"><a class="header" href="#parameters-6">Parameters</a></h3>
@@ -956,7 +954,7 @@ Our implementation of DSA is adopted from <a href="https://github.com/VICO-UoE/D
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p><span style="color:#FF6B00;">CLASS</span>
 ddranking.aug.DSA(params: dict, seed: int, aug_mode: str)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/aug/dsa.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/aug/dsa.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-8"><a class="header" href="#parameters-8">Parameters</a></h3>
 <ul>
@@ -976,7 +974,7 @@ ddranking.aug.DSA(params: dict, seed: int, aug_mode: str)
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p><span style="color:#FF6B00;">CLASS</span>
 ddranking.aug.Cutmix(params: dict)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/aug/cutmix.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/aug/cutmix.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-9"><a class="header" href="#parameters-9">Parameters</a></h3>
 <ul>
@@ -994,7 +992,7 @@ ddranking.aug.Cutmix(params: dict)
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p><span style="color:#FF6B00;">CLASS</span>
 ddranking.aug.Mixup(params: dict)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/aug/mixup.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/aug/mixup.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-10"><a class="header" href="#parameters-10">Parameters</a></h3>
 <ul>
@@ -1037,12 +1035,12 @@ ddranking.aug.Mixup(params: dict)
 <p>Users can download the weights from the following links: <a href="https://drive.google.com/drive/folders/19OnR85PRs3TZk8xS8XNr9hiokfsML4m2?usp=sharing">Pretrained Model Weights</a>.</p>
 <p>Users can also feel free to use <code>torchvision</code> pretrained models.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="convnet"><a class="header" href="#convnet">ConvNet</a></h2>
-<p>Our <a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/networks.py">implementation</a> of ConvNet is based on <a href="https://github.com/VICO-UoE/DatasetCondensation">DC</a>.</p>
+<p>Our <a href="ddranking/utils/networks.py">implementation</a> of ConvNet is based on <a href="https://github.com/VICO-UoE/DatasetCondensation">DC</a>.</p>
 <p>By default, we use width 128, average pooling, and ReLU activation. We provide the following interface to initialize a ConvNet model:</p>
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p>dd_ranking.utils.get_convnet(model_name: str,
 im_size: tuple, channel: int, num_classes: int, net_depth: int, net_norm: str, pretrained: bool, model_path: str)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-11"><a class="header" href="#parameters-11">Parameters</a></h3>
 <ul>
@@ -1058,7 +1056,7 @@ im_size: tuple, channel: int, num_classes: int, net_depth: int, net_norm: str, p
 <p>To load a ConvNet model with different width or activation function or pooling method, you can use the following interface:</p>
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p>dd_ranking.utils.networks.ConvNet(channel, num_classes, net_width, net_depth, net_act, net_norm, net_pooling, im_size)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/dd_ranking/utils/networks.py"><strong>[SOURCE]</strong></a></p>
+<a href="dd_ranking/utils/networks.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-12"><a class="header" href="#parameters-12">Parameters</a></h3>
 <p>We only list the parameters that are not present in <code>get_convnet</code>.</p>
@@ -1068,11 +1066,11 @@ im_size: tuple, channel: int, num_classes: int, net_depth: int, net_norm: str, p
 <li><strong>net_pooling</strong>(<span style="color:#FF6B00;">str</span>): Pooling method. We support <code>avgpooling</code>, <code>maxpooling</code>, and <code>none</code>.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="alexnet"><a class="header" href="#alexnet">AlexNet</a></h2>
-<p>Our <a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/networks.py">implementation</a> of ConvNet is based on <a href="https://github.com/VICO-UoE/DatasetCondensation">DC</a>.</p>
+<p>Our <a href="ddranking/utils/networks.py">implementation</a> of ConvNet is based on <a href="https://github.com/VICO-UoE/DatasetCondensation">DC</a>.</p>
 <p>We provide the following interface to initialize a AlexNet model:</p>
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p>ddranking.utils.get_alexnet(model_name: str, im_size: tuple, channel: int, num_classes: int, pretrained: bool, model_path: str)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-13"><a class="header" href="#parameters-13">Parameters</a></h3>
 <ul>
@@ -1089,7 +1087,7 @@ im_size: tuple, channel: int, num_classes: int, net_depth: int, net_norm: str, p
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p>ddranking.utils.get_resnet(model_name: str,
 im_size: tuple, channel: int, num_classes: int, depth: int, batchnorm: bool, use_torchvision: bool, pretrained: bool, model_path: str)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-14"><a class="header" href="#parameters-14">Parameters</a></h3>
 <ul>
@@ -1111,11 +1109,11 @@ model.maxpool = torch.nn.Identity()
 </code></pre>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="lenet"><a class="header" href="#lenet">LeNet</a></h2>
-<p>Our <a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/networks.py">implementation</a> of LeNet is based on <a href="https://github.com/VICO-UoE/DatasetCondensation">DC</a>.</p>
+<p>Our <a href="ddranking/utils/networks.py">implementation</a> of LeNet is based on <a href="https://github.com/VICO-UoE/DatasetCondensation">DC</a>.</p>
 <p>We provide the following interface to initialize a LeNet model:</p>
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p>ddranking.utils.get_lenet(model_name: str, im_size: tuple, channel: int, num_classes: int, pretrained: bool, model_path: str)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-15"><a class="header" href="#parameters-15">Parameters</a></h3>
 <ul>
@@ -1132,7 +1130,7 @@ model.maxpool = torch.nn.Identity()
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p>ddranking.utils.get_vgg(model_name: str,
 im_size: tuple, channel: int, num_classes: int, depth: int, batchnorm: bool, use_torchvision: bool, pretrained: bool, model_path: str)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-16"><a class="header" href="#parameters-16">Parameters</a></h3>
 <ul>
@@ -1172,11 +1170,11 @@ When using torchvision VGG on image size smaller than 224 x 224, we make the fol
 ]))
 </code></pre>
 </div><div style="break-before: page; page-break-before: always;"></div><h2 id="mlp"><a class="header" href="#mlp">MLP</a></h2>
-<p>Our <a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/networks.py">implementation</a> of MLP is based on <a href="https://github.com/VICO-UoE/DatasetCondensation">DC</a>.</p>
+<p>Our <a href="ddranking/utils/networks.py">implementation</a> of MLP is based on <a href="https://github.com/VICO-UoE/DatasetCondensation">DC</a>.</p>
 <p>We provide the following interface to initialize a MLP model:</p>
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p>ddranking.utils.get_mlp(model_name: str, im_size: tuple, channel: int, num_classes: int, pretrained: bool, model_path: str)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/utils/model.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-17"><a class="header" href="#parameters-17">Parameters</a></h3>
 <ul>
@@ -1191,7 +1189,7 @@ When using torchvision VGG on image size smaller than 224 x 224, we make the fol
 <p>DD-Ranking provides a set of commonly used datasets in existing dataset distillation methods. Users can flexibly use these datasets for evaluation. The interface to load datasets is as follows:</p>
 <div style="background-color:#F7F7F7; padding:15px; border:1px solid #E0E0E0; border-top:3px solid #FF0000; font-family:monospace; font-size:14px;">
 <p>ddranking.utils.get_dataset(dataset: str, data_path: str, im_size: tuple, use_zca: bool, custom_val_trans: Optional[Callable], device: str)
-<a href="https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/ddranking/utils/data.py"><strong>[SOURCE]</strong></a></p>
+<a href="ddranking/utils/data.py"><strong>[SOURCE]</strong></a></p>
 </div>
 <h3 id="parameters-18"><a class="header" href="#parameters-18">Parameters</a></h3>
 <ul>
