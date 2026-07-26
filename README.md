@@ -12,31 +12,7 @@
 <!-- <h3 align="center">
 Fair and benchmark for dataset distillation.
 </h3> -->
-<p align="center">
-| <a href="https://nus-hpc-ai-lab.github.io/DD-Ranking/"><b>Documentation</b></a> | <a href="https://huggingface.co/spaces/logits/DD-Ranking"><b>Leaderboard</b></a> | <a href="https://arxiv.org/abs/2505.13300"><b>Paper</b> </a> | <a href="https://x.com/Richard91316073/status/1890296645486801230"><b>Twitter/X</b></a> | <a href="https://join.slack.com/t/dd-ranking/shared_invite/zt-2xlcuq1mf-hmVcfrtqrIB3qXRjwgB03A"><b>Developer Slack</b></a> |
-</p>
 
-
----
-
-*Latest News* 🔥
-
-[Latest] We have released the v0.2.0 version of DD-Ranking. Please install the latest version via `pip install ddranking==0.2.0` or `pip install ddranking --upgrade`.
-
-<details>
-<summary>Unfold to see more details.</summary>
-<br>
-
-- [2025/06] We have released the v0.2.0 version of DD-Ranking. Please install the latest version via `pip install ddranking==0.2.0` or `pip install ddranking --upgrade`.
-
-- [2025/02] We have fixed some bugs and released a new version of DD-Ranking. Please update your package via `pip install ddranking==0.1.4` or `pip install ddranking --upgrade`.
-
-- [2025/01] Our PyPI package is officially released! Users can now install DD-Ranking via `pip install ddranking`.
-
-- [2024/12/28] We officially released DD-Ranking! DD-Ranking provides us a new benchmark decoupling the impacts from knowledge distillation and data augmentation.
-</details>
-
----
 
 ## Motivation: DD Lacks an Evaluation Benchmark
 
@@ -109,9 +85,9 @@ and normalized to $[0, 1]$ similarly.
 ## Overview
 
 DD-Ranking is integrated with:
-- Multiple [strategies](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/tree/main/dd_ranking/loss) of using soft labels in existing works;
-- Commonly used [data augmentation](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/tree/main/dd_ranking/aug) methods in existing works;
-- Commonly used [model architectures](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/blob/main/dd_ranking/utils/networks.py) in existing works.
+- Multiple strategies of using soft labels in existing works;
+- Commonly used data augmentation methods in existing works;
+- Commonly used model architectures in existing works.
 
 DD-Ranking has the following features:
 - **Fair Evaluation**: DD-Ranking provides a fair evaluation scheme for DD methods that can decouple the impacts from knowledge distillation and data augmentation to reflect the real informativeness of the distilled data.
@@ -119,7 +95,7 @@ DD-Ranking has the following features:
 - **Extensible**: DD-Ranking supports various datasets and models.
 - **Customizable**: DD-Ranking supports various data augmentations and soft label strategies.
 
-DD-Ranking currently includes the following datasets and methods (categorized by hard/soft label). Our replication of the following baselines can be found at the [methods](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/tree/methods) branch. Evaluation results can be found in the [leaderboard](https://huggingface.co/spaces/Soptq/DD-Ranking) and evaluation configurations can be found at the [eval](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/tree/eval) branch.
+DD-Ranking currently includes the following datasets and methods (categorized by hard/soft label). Our replication of the following baselines can be found at the methods branch. Evaluation results can be found in the leaderboard and evaluation configurations can be found at the eval branch.
 
 |Supported Dataset|Evaluated Hard Label Methods|Evaluated Soft Label Methods|
 |:-|:-|:-|
@@ -137,7 +113,7 @@ DD-Ranking currently includes the following datasets and methods (categorized by
 
 ## Tutorial
 
-Install DD-Ranking with `pip` or from [source](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/tree/main):
+Install DD-Ranking with `pip` or from source:
 
 ### Installation
 
@@ -157,7 +133,7 @@ python setup.py install
 Below is a step-by-step guide on how to use our `ddranking`. This demo is based on LRS on soft labels (source code can be found in `demo_lrs_soft.py`). You can find LRS on hard labels in `demo_lrs_hard.py` and ARS in `demo_aug.py`.
 DD-Ranking supports multi-GPU Distributed evaluation. You can simply use `torchrun` to launch the evaluation.
 
-**Step1**: Intialize a soft-label metric evaluator object. Config files are recommended for users to specify hyper-parameters. Sample config files are provided [here](https://github.com/NUS-HPC-AI-Lab/DD-Ranking/tree/main/configs).
+**Step1**: Intialize a soft-label metric evaluator object. Config files are recommended for users to specify hyper-parameters. Sample config files are provided in the eval branch.
 
 ```python
 from ddranking.metrics import LabelRobustScoreSoft
@@ -248,8 +224,6 @@ The following results will be printed and saved to `save_path`:
 - `LRS mean`: The mean of Label-Robust Score over `num_eval` runs.
 - `LRS std`: The standard deviation of Label-Robust Score over `num_eval` runs.
 
-Check out our <span style="color: #ff0000;">[documentation](https://nus-hpc-ai-lab.github.io/DD-Ranking/)</span> to learn more.
-
 
 ## Contributing
 
@@ -258,71 +232,7 @@ Feel free to submit grades to update the DD-Ranking list. We welcome and value a
 Please check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to get involved.
 
 
-<!-- ## Technical Members:
-- [Zekai Li*](https://lizekai-richard.github.io/) (National University of Singapore)
-- [Xinhao Zhong*](https://ndhg1213.github.io/) (National University of Singapore)
-- [Zhiyuan Liang](https://jerryliang24.github.io/) (University of Science and Technology of China)
-- [Yuhao Zhou](https://github.com/Soptq) (Sichuan University)
-- [Mingjia Shi](https://bdemo.github.io/homepage/) (Sichuan University)
-- [Dongwen Tang](https://scholar.google.com/citations?user=9lKm_5IAAAAJ) (National University of Singapore)
-- [Ziqiao Wang](https://www.linkedin.com/in/ziqiao-wang-95a4b232b?trk=contact-info) (National University of Singapore)
-- [Wangbo Zhao](https://wangbo-zhao.github.io/) (National University of Singapore)
-- [Xuanlei Zhao](https://oahzxl.github.io/) (National University of Singapore)
-- [Haonan Wang](https://charles-haonan-wang.me/) (National University of Singapore)
-- [Ziheng Qin](https://henryqin1997.github.io/ziheng_qin/) (National University of Singapore)
-- [Dai Liu](https://scholar.google.com/citations?user=3aWKpkQAAAAJ&hl=en) (Technical University of Munich)
-- [Kaipeng Zhang](https://kpzhang93.github.io/) (Shanghai AI Lab)
-- [Tianyi Zhou](https://joeyzhouty.github.io/) (A*STAR)
-- [Zheng Zhu](http://www.zhengzhu.net/) (Tsinghua University)
-- [Kun Wang](https://www.kunwang.net/) (University of Science and Technology of China)
-- [Guang Li](https://www-lmd.ist.hokudai.ac.jp/member/guang-li/) (Hokkaido University)
-- [Junhao Zhang](https://junhaozhang98.github.io/) (National University of Singapore)
-- [Jiawei Liu](https://jia-wei-liu.github.io/) (National University of Singapore)
-- [Zhiheng Ma](https://zhiheng-ma.github.io/) (SUAT)
-- [Yiran Huang](https://www.eml-munich.de/people/yiran-huang) (Technical University of Munich)
-- [Lingjuan Lyu](https://sites.google.com/view/lingjuan-lyu) (Sony)
-- [Jiancheng Lv](https://scholar.google.com/citations?user=0TCaWKwAAAAJ&hl=en) (Sichuan University)
-- [Yaochu Jin](https://en.westlake.edu.cn/faculty/yaochu-jin.html) (Westlake University)
-- [Zeynep Akata](https://www.eml-munich.de/people/zeynep-akata) (Technical University of Munich)
-- [Jindong Gu](https://jindonggu.github.io/) (Oxford University)
-- [Rama Vedantam](https://ramavedantam.com/) (Independent Researcher)
-- [Mike Shou](https://sites.google.com/view/showlab) (National University of Singapore)
-- [Zhiwei Deng](https://lucas2012.github.io/) (Google DeepMind)
-- [Yan Yan](https://tomyan555.github.io/) (University of Illinois at Chicago)
-- [Yuzhang Shang](https://42shawn.github.io/) (University of Illinois at Chicago)
-- [George Cazenavette](https://georgecazenavette.github.io/) (Massachusetts Institute of Technology)
-- [Xindi Wu](https://xindiwu.github.io/) (Princeton University)
-- [Justin Cui](https://scholar.google.com/citations?user=zel3jUcAAAAJ&hl=en) (University of California, Los Angeles)
-- [Tianlong Chen](https://tianlong-chen.github.io/) (University of North Carolina at Chapel Hill)
-- [Angela Yao](https://www.comp.nus.edu.sg/~ayao/) (National University of Singapore)
-- [Baharan Mirzasoleiman](https://baharanm.github.io/) (University of California, Los Angeles)
-- [Hakan Bilen](https://homepages.inf.ed.ac.uk/hbilen/) (University of Edinburgh)
-- [Manolis Kellis](https://web.mit.edu/manoli/) (Massachusetts Institute of Technology)
-- [Konstantinos N. Plataniotis](https://www.comm.utoronto.ca/~kostas/) (University of Toronto)
-- [Bo Zhao](https://www.bozhao.me/) (Shanghai Jiao Tong University)
-- [Zhangyang Wang](https://vita-group.github.io/) (University of Texas at Austin)
-- [Yang You](https://www.comp.nus.edu.sg/~youy/) (National University of Singapore)
-- [Kai Wang](https://kaiwang960112.github.io/) (National University of Singapore)
-
-\* *equal contribution* -->
-
 ## License
 
 DD-Ranking is released under the MIT License. See [LICENSE](./LICENSE) for more details.
 
-
-## Reference
-
-If you find DD-Ranking useful in your research, please consider citing the following paper:
-
-```bibtex
-@misc{li2025ddrankingrethinkingevaluationdataset,
-      title={DD-Ranking: Rethinking the Evaluation of Dataset Distillation}, 
-      author={Zekai Li and Xinhao Zhong and Samir Khaki and Zhiyuan Liang and Yuhao Zhou and Mingjia Shi and Ziqiao Wang and Xuanlei Zhao and Wangbo Zhao and Ziheng Qin and Mengxuan Wu and Pengfei Zhou and Haonan Wang and David Junhao Zhang and Jia-Wei Liu and Shaobo Wang and Dai Liu and Linfeng Zhang and Guang Li and Kun Wang and Zheng Zhu and Zhiheng Ma and Joey Tianyi Zhou and Jiancheng Lv and Yaochu Jin and Peihao Wang and Kaipeng Zhang and Lingjuan Lyu and Yiran Huang and Zeynep Akata and Zhiwei Deng and Xindi Wu and George Cazenavette and Yuzhang Shang and Justin Cui and Jindong Gu and Qian Zheng and Hao Ye and Shuo Wang and Xiaobo Wang and Yan Yan and Angela Yao and Mike Zheng Shou and Tianlong Chen and Hakan Bilen and Baharan Mirzasoleiman and Manolis Kellis and Konstantinos N. Plataniotis and Zhangyang Wang and Bo Zhao and Yang You and Kai Wang},
-      year={2025},
-      eprint={2505.13300},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2505.13300}, 
-}
-```
