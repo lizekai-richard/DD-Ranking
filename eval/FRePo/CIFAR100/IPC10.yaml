@@ -1,0 +1,40 @@
+# real data
+dataset: FREPO-CIFAR100
+real_data_path: ./dataset/
+
+# synthetic data
+ipc: 10
+im_size: [32, 32]
+
+# agent model
+model_name: ConvNet-3
+use_torchvision: false
+
+# data augmentation
+data_aug_func: null
+aug_params: null
+custom_train_trans: null
+custom_val_trans: null
+# FRePo normalization/ZCA is applied by the FREPO-CIFAR100 dataset adapter.
+use_zca: false
+
+# training specifics
+optimizer: sgd
+lr_scheduler: step
+step_size: 500
+weight_decay: 0.0005
+momentum: 0.9
+num_eval: 5
+num_epochs: 1000
+syn_batch_size: 256
+real_batch_size: 512
+default_lr: 0.05
+num_workers: 4
+device: cuda
+dist: true
+eval_full_data: true
+
+# save path
+save_path: ./results/cifar100/ipc10/frepo.csv
+random_data_format: tensor
+random_data_path: ./random_data/FRePo/CIFAR100/IPC10/
